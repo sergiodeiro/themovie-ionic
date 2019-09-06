@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Feed</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="cards-bg social-cards">
+  <ion-card *ngFor="let filme of lista_filmes">
+    <ion-item >
+      <ion-avatar item-start>
+          <!--<img [src]="'https://image.tmdb.org/t/p/w500/' + filme.backdrop_path">-->
+          {{filme.vote_average}}
+      </ion-avatar>
+      <div class="ion-div">
+        <h2 class="ion-h2">{{filme.original_title}}</h2>
+        <p>{{filme.release_date}}</p>
+      </div>
+    </ion-item>
+  
+    <img [src]="'https://image.tmdb.org/t/p/w500/' + filme.backdrop_path">
+  
+    <ion-card-content>
+      <p>{{filme.overview}}</p>
+    </ion-card-content>
+  
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+            {{filme.vote_count}}
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-start clear small>
+          <ion-icon name="text"></ion-icon>
+          {{filme.popularity}}
+        </button>
+      </ion-col>
+    </ion-row>
+  
+  </ion-card>
+</ion-content>
